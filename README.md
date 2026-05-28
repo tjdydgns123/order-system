@@ -30,13 +30,22 @@ com.ecom.ordersystem
 
 ## 실행 전 준비
 
-로컬에 다음 서비스가 실행 중이어야 합니다.
+레포 루트의 `docker-compose.yml`로 의존 인프라를 한 번에 띄울 수 있습니다.
 
-| 서비스 | 포트 |
-|--------|------|
-| Redis | 6379 |
-| Elasticsearch | 9200 |
-| Kafka | 9092 |
+```bash
+docker-compose up -d
+```
+
+기동되는 서비스:
+
+| 서비스 | 포트 | 비고 |
+|--------|------|------|
+| Redis | 6379 | |
+| Kafka | 9092 | |
+| Zookeeper | — | Kafka 의존 |
+| Kafka UI | 8089 | http://localhost:8089 |
+| Elasticsearch | 9200 | |
+| Kibana | 5601 | http://localhost:5601 |
 
 ## 실행
 
